@@ -5,6 +5,7 @@ This is a calculator program that reads an expression and prints the evaluation 
 Sample inputs and outputs are as follows:
 
 Input                                                       Output
+------------------------------------------------------------------
 add(1, 2)                                                   3
 add(1, mult(2, 3))                                          7
 mult(add(2, 2), div(9, 3))                                  12

@@ -4,15 +4,14 @@ This is a calculator program that reads an expression and prints the evaluation 
 
 Sample inputs and outputs are as follows:
 
-Input                                                       Output<br>
-------------------------------------------------------------------
-add(1, 2)                                                   3<br>
-add(1, mult(2, 3))                                          7<br>
-mult(add(2, 2), div(9, 3))                                  12<br>
-let(a, 5, add(a, a))                                        10<br>
-let(a, 5, let(b, mult(a, 10), add(b, a)))                   55<br>
-let(a, let(b, 10, add(b, b)), let(b, 20, add(a, b)))        40<br>
-<br>
+     Input                                                       Output
+     add(1, 2)                                                   3
+     add(1, mult(2, 3))                                          7
+     mult(add(2, 2), div(9, 3))                                  12
+     let(a, 5, add(a, a))                                        10
+     let(a, 5, let(b, mult(a, 10), add(b, a)))                   55
+     let(a, let(b, 10, add(b, b)), let(b, 20, add(a, b)))        40
+
 ## Issues Encountered
 
 The main issue is where is the most proper place to put an ERROR level logging.

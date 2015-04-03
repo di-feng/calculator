@@ -12,19 +12,11 @@ Sample inputs and outputs are as follows:
      let(a, 5, let(b, mult(a, 10), add(b, a)))                   55
      let(a, let(b, 10, add(b, b)), let(b, 20, add(a, b)))        40
 
-## Issues Encountered
-
-The main issue is where is the most proper place to put an ERROR level logging.
-
-In this project, there are 3 levels of logging: DEBUG, INFO, ERROR. It's easy to decide for DEBUG level and INFO level logging, since DEBUG is used for logging fine-grained information to provide useful data when debugging the code, and INFO is used to provide information regarding the progress of the program at a coarse-grained level.
-
-On the other hand, ERROR level logging exists mainly in order to provide detailed error information and at the same time give the program a chance to restore from an error and continue to execute. However, for this calculator program, if an error happened, it means the expression input is invalid, and the program will not be able to give a correct answer whatsoever. So there is no way to "restore" from the error. Therefore, it's reasonable to throw an exception whenever the input is found invalid to end the program, and put the ERROR level logging within a try/catch clause in the main method just to show the user a message why the input is invalid.
-
 ## How to Build
 
 The project is already built. A calculator.jar file can be found under the "target" folder.
 
-Or one can use maven to build the project easily. Assuming you are using Mac/Linux where Maven is installed. Go to the calculator project directory in shell, run the following command:
+One can also use maven to build the project easily. Assuming you are using Mac/Linux where Maven is installed. Go to the calculator project directory in shell, run the following command:
 
      mvn package
 
@@ -46,12 +38,20 @@ The project is currently configured to save the log file at the directory where 
 
 Two JUnit test classes are responsible for testing methods in class <code>Arithmetic</code> and <code>Parser</code>.
 
+## Issues Encountered
+
+The main issue is where is the most proper place to put an ERROR level logging.
+
+In this project, there are 3 levels of logging: DEBUG, INFO, ERROR. It's easy to decide for DEBUG level and INFO level logging, since DEBUG is used for logging fine-grained information to provide useful data when debugging the code, and INFO is used to provide information regarding the progress of the program at a coarse-grained level.
+
+On the other hand, ERROR level logging exists mainly in order to provide detailed error information and at the same time give the program a chance to restore from an error and continue to execute. However, for this calculator program, if an error happened, it means the expression input is invalid, and the program will not be able to give a correct answer whatsoever. So there is no way to "restore" from the error. Therefore, it's reasonable to throw an exception whenever the input is found invalid to end the program, and put the ERROR level logging within a try/catch clause in the main method just to show the user a message why the input is invalid.
+
+## What Could Be Further Improved
+
+When there is an undefined variable encountered in the expression, the logger will tell the user the name of the undefined variable, and the user can examine the expression based on this. The logging code can be improved to further points out the undefined variable's position in the expression, so that it's faster for the user to pinpoint the problem and make corrections.
+
 ## Time Spent on Different Parts of the Project
 
 1.5 hours for writing the core code to correctly calculate a valid expression.
 2 hours for writing custom exceptions, adding logging code, setting up "log4.properties" file, writing javadoc.
 30 minutes for writing JUnit test cases.
-
-## What Could Be Further Improved
-
-When there is an undefined variable encountered in the expression, the logger will tell the user the name of the undefined variable, and the user can examine the expression based on this. The logging code can be improved to further points out the undefined variable's position in the expression, so that it's faster for the user to pinpoint the problem and make corrections.

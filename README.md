@@ -16,7 +16,7 @@ Sample inputs and outputs are as follows:
 
 The project is already built. A calculator.jar file can be found under the "target" folder.
 
-One can also use maven to build the project easily. Assuming you are using Mac/Linux where Maven is installed. Go to the calculator project directory in shell, run the following command:
+One can also use maven to build the project easily. Assuming you are using Mac/Linux/Unix with Maven installed and can use <code>mvn</code> command. Go to the calculator project directory in shell, run the following command:
 
      mvn package
 
